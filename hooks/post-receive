@@ -1,0 +1,2 @@
+#!/bin/sh
+GIT_WORK_TREE=/var/www/calculonumerico git checkout -f
