@@ -10,7 +10,7 @@
 		'git submodule status',
 	);
 	// Run the commands for output
-	$output = '';
+	//$output = '';
 	foreach($commands AS $command){
 		// Run it
 		$tmp = shell_exec($command);
