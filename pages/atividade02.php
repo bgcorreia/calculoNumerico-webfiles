@@ -83,12 +83,16 @@
 						<label for="base">Base</label>
 						<select class="form-control" name="base" id="base">
 							<option>10</option>
+							<option>8</option>
+							<option>2</option>
 						</select>
 					</div>
 
 					<div class="form-group">
 						<label for="precisao">Precisão</label>
 						<select class="form-control" name="precisao" id="precisao">
+							<option>5</option>
+							<option>4</option>
 							<option>3</option>
 							<option>2</option>
 							<option>1</option>
@@ -98,6 +102,8 @@
 					<div class="form-group">
 						<label for="limlower">Limite Inferior</label>
 						<select class="form-control" name="limlower" id="limlower">
+							<option>-5</option>
+							<option>-4</option>
 							<option>-3</option>
 							<option>-2</option>
 							<option>-1</option>
@@ -107,9 +113,12 @@
 					<div class="form-group">
 						<label for="limupper">Limite Superior</label>
 						<select class="form-control" name="limupper" id="limupper">
+							<option>5</option>
+							<option>4</option>
 							<option>3</option>
 							<option>2</option>
 							<option>1</option>
+							<option>0</option>
 						</select>
 					</div>
 
