@@ -26,7 +26,7 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">Início</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    Atividades
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -65,10 +65,58 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
+	  				<b>Atividade 01</b>
 				</div>
 
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
+			<form name="calcform" method="post" action="">
+			   <fieldset>
+			      <legend>Conversor (Decimal > Binario)</legend>
+
+			      <label for="numero">Digite o valor: </label>
+			      <input type="text" name="numero" id="numero" />
+			tNumero
+			      <label for="tNumero">Selecione a operação:</label>
+			      <select name="tNumero" id="tNumero">
+			         <option value="inteiro">inteiro</option>
+			         <option value="flutuante">flutuante</option>
+			       </select>
+
+			      <label for="res">Resultado:</label>
+			      <input type="text" name="res" id="res" />
+
+			      <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
+			   </fieldset>
+				</form>
+
+
+			</style>
+
+			<script type="text/javascript">
+
+			   function calcular(tNumero) {
+			   var numero = document.calcform.numero.value;
+			   
+
+			   if (tNumero == "inteiro") {
+			           
+			      	var decInteiro = parseInt(numero);
+					var binario = decInteiro.toString(2);
+					var res = binario;
+			   } 
+			   else {
+			      if (tNumero == "flutuante") {
+			           
+			        var decQuebrado = parseFloat(numero);
+					var binario = decQuebrado.toString(2);
+					var res = binario;
+
+			      } 
+			      
+			   }
+			   document.calcform.res.value = res;
+					}
+
+			 </script>
 
 			</div>
 

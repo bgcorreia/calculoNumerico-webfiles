@@ -30,8 +30,10 @@
 							    Atividades
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/atividade01.html">Atividade 01</a>
-							    <a class="dropdown-item disabled" href="#">Atividade 02</a>
+							    <a class="dropdown-item" href="/pages/atividade01">Atividade 01</a>
+							    <a class="dropdown-item" href="/pages/atividade02">Atividade 02</a>
+							    <a class="dropdown-item" href="/pages/atividade03">Atividade 03</a>
+							    <a class="dropdown-item" href="/pages/atividade04">Atividade 04</a>
 							  </div>
 							</div>
 						</li>
@@ -63,58 +65,61 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Atividade 01</b>
+	  				<b>Atividade 04</b>
 				</div>
 
-			<form name="calcform" method="post" action="">
-			   <fieldset>
-			      <legend>Conversor (Decimal > Binario)</legend>
+				<div id="forms">
+					<?php
 
-			      <label for="numero">Digite o valor: </label>
-			      <input type="text" name="numero" id="numero" />
-			tNumero
-			      <label for="tNumero">Selecione a operação:</label>
-			      <select name="tNumero" id="tNumero">
-			         <option value="inteiro">inteiro</option>
-			         <option value="flutuante">flutuante</option>
-			       </select>
+						$DEBUG = 0;
 
-			      <label for="res">Resultado:</label>
-			      <input type="text" name="res" id="res" />
+						$dataDir = "../../data/";
 
-			      <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
-			   </fieldset>
-				</form>
+						$execDir = $dataDir . $_REQUEST['exec'];
 
+						if ( !(is_dir($execDir)) ){
+							mkdir( $execDir , 0755 );
+						}
 
-			</style>
+						$backC = "./float-point" ;
 
-			<script type="text/javascript">
+						$backR = "back.R" ;
 
-			   function calcular(tNumero) {
-			   var numero = document.calcform.numero.value;
-			   
+						$base = $_REQUEST['base'];
 
-			   if (tNumero == "inteiro") {
-			           
-			      	var decInteiro = parseInt(numero);
-					var binario = decInteiro.toString(2);
-					var res = binario;
-			   } 
-			   else {
-			      if (tNumero == "flutuante") {
-			           
-			        var decQuebrado = parseFloat(numero);
-					var binario = decQuebrado.toString(2);
-					var res = binario;
+						$precisao = $_REQUEST['precisao'];
 
-			      } 
-			      
-			   }
-			   document.calcform.res.value = res;
-					}
+						$limlower = $_REQUEST['limlower'];
 
-			 </script>
+						$limupper = $_REQUEST['limupper'];
+
+						$fileOutput = $execDir . "/saida.csv";
+
+						// R need variable HOME defined for user www-data
+						putenv("HOME=/tmp");
+
+						if ($DEBUG) {
+
+							echo $backC . " -o " . $fileOutput . " -b " . $base . " -p " . $precisao . " -l " . $limlower . " -u " . $limupper . "<br><br>";
+
+							echo "FileOutput: " . $fileOutput . "<br>";
+							echo "Base: " . $base . "<br>";
+							echo "Precisao: " . $precisao . "<br>";
+							echo "LimLower: " . $limlower . "<br>";
+							echo "LimUpper: " . $limupper . "<br>";
+						}
+						
+						exec($backC . " -o " . $fileOutput . " -b " . $base . " -p " . $precisao . " -l " . $limlower . " -u " . $limupper);
+
+						exec("Rscript " . $backR . " " . $fileOutput . " " . $execDir);
+
+					?>
+
+					<iframe class="iframe" src="<?php echo $execDir; ?>/plot.html" width="100%" frameborder="none" style="border-radius: 8px 8px 8px 8px; height: 500px;"></iframe>
+
+					<?php ?>
+
+				</div>
 
 			</div>
 
