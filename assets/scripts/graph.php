@@ -23,17 +23,17 @@
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">Início</a>
+								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    Atividades
+							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/atividade01">Atividade 01</a>
-							    <a class="dropdown-item" href="/pages/atividade02">Atividade 02</a>
-							    <a class="dropdown-item" href="/pages/atividade03">Atividade 03</a>
-							    <a class="dropdown-item" href="/pages/atividade04">Atividade 04</a>
+							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
+							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
+							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSEÇÃO</a>
+							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NEWTON</a>
 							  </div>
 							</div>
 						</li>
@@ -65,7 +65,7 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Atividade 04</b>
+	  				<b>ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE - GRÁFICO</b>
 				</div>
 
 				<div id="forms">
@@ -106,11 +106,21 @@
 							echo "Base: " . $base . "<br>";
 							echo "Precisao: " . $precisao . "<br>";
 							echo "LimLower: " . $limlower . "<br>";
-							echo "LimUpper: " . $limupper . "<br>";
+							echo "LimUpper: " . $limupper . "<br><br>";
 						}
 						
+						// EXECUTION C PROGRAM
 						exec($backC . " -o " . $fileOutput . " -b " . $base . " -p " . $precisao . " -l " . $limlower . " -u " . $limupper);
 
+						if ($DEBUG) {
+
+							echo "Rscript " . $backR . " " . $fileOutput . " " . $execDir . "<br><br>";
+
+							echo "FileOutput: " . $fileOutput . "<br>";
+							echo "execDir: " . $execDir . "<br>";
+						}
+
+						// EXECUTION R PROGRAM
 						exec("Rscript " . $backR . " " . $fileOutput . " " . $execDir);
 
 					?>

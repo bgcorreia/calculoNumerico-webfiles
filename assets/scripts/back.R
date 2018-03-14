@@ -11,5 +11,5 @@ dir <- args[2]
 dados <- read.csv(saida, col.names = c("X", "Y"), header = F, sep=";")
 
 p <- ggplotly(ggplot(data = dados, aes(x=X, y=Y)) + 
-	geom_point() + geom_blank() + ggtitle("Grafico Ponto Flutuante"))
+	geom_point() + ggtitle("Grafico Ponto Flutuante"))
 htmlwidgets::saveWidget(as_widget(p), paste0(dir, "/plot.html"))

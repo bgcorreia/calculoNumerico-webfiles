@@ -23,17 +23,17 @@
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">Início</a>
+								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
 							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    Atividades
+							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/atividade01">Atividade 01</a>
-							    <a class="dropdown-item" href="/pages/atividade02">Atividade 02</a>
-							    <a class="dropdown-item" href="/pages/atividade03">Atividade 03</a>
-							    <a class="dropdown-item" href="/pages/atividade04">Atividade 04</a>
+							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
+							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
+							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSEÇÃO</a>
+							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NEWTON</a>
 							  </div>
 							</div>
 						</li>
@@ -65,56 +65,10 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Atividade 04</b>
+	  				<b>ATIVIDADE 04 - NEWTON</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/graph">
-
-					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
-					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
-
-					<div class="dropdown-divider"></div>
-
-					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
-
-					<div class="dropdown-divider"></div>
-
-					<div class="form-group">
-						<label for="base">Base</label>
-						<select class="form-control" name="base" id="base">
-							<option>10</option>
-						</select>
-					</div>
-
-					<div class="form-group">
-						<label for="precisao">Precisão</label>
-						<select class="form-control" name="precisao" id="precisao">
-							<option>3</option>
-							<option>2</option>
-							<option>1</option>
-						</select>
-					</div>
-					
-					<div class="form-group">
-						<label for="limlower">Limite Inferior</label>
-						<select class="form-control" name="limlower" id="limlower">
-							<option>-3</option>
-							<option>-2</option>
-							<option>-1</option>
-						</select>
-					</div>						
-					
-					<div class="form-group">
-						<label for="limupper">Limite Superior</label>
-						<select class="form-control" name="limupper" id="limupper">
-							<option>3</option>
-							<option>2</option>
-							<option>1</option>
-						</select>
-					</div>
-
-					<input type="submit" class="btn btn-primary upload" value="Gerar gráfico" id="gerarGrafico">
-
+				<form name="calcform" method="post" action="">
 				</form>
 
 			</div>
