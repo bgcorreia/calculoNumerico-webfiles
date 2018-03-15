@@ -100,7 +100,6 @@
 					<div class="form-group">
 						<label for="limlower">Limite Inferior</label>
 						<select class="form-control" name="limlower" id="limlower">
-							<option>-5</option>
 							<option>-4</option>
 							<option>-3</option>
 							<option>-2</option>
@@ -111,7 +110,6 @@
 					<div class="form-group">
 						<label for="limupper">Limite Superior</label>
 						<select class="form-control" name="limupper" id="limupper">
-							<option>5</option>
 							<option>4</option>
 							<option>3</option>
 							<option>2</option>
