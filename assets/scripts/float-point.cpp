@@ -25,12 +25,15 @@ public:
 
 };
 
+
 void SistemaDeAritimeticaDePontoFlutuante(string saida, int BASE, int precisao, int limLower, int limUpper){
 
 	ofstream output;
 	output.open(saida.c_str());
 
 	int maxValores = 2*( (BASE-1) * (pow(BASE,(precisao-1))) * (limUpper-limLower+1) ) + 1 ;
+
+	cout << "Valores Máximos: " << maxValores << endl;
 
 	float arrayValores[ maxValores ];
 	
@@ -40,18 +43,47 @@ void SistemaDeAritimeticaDePontoFlutuante(string saida, int BASE, int precisao, 
 
 	int indice = 0;
 
-	//cout << "Valor: " << maxValores << endl << endl;
-	
-	for( int i = 1 ; i <= 9 ; i++ ){
 
-		for( int j = 0 ; j <= 9 ; j++ ){
+	if ( precisao == 1 ) {
 
-			for( int k = 0 ; k <= 9 ; k++ ){
+		for( int i = 1 ; i <= 9 ; i++ ){
+
+			for( int z = limLower ; z <= limUpper ; z++ ){
+
+				// CONCATENA OS VALORES NO ARRAY
+				arrayConcat[indice] << i;
+
+				// ESCREVE VALORES EM UM ARRAY DE STRING
+				arrayString[indice] = arrayConcat[indice].str();
+
+				// CONVERTE VALOR DO ARRAY DE STRING EM INT E ESCREVE NO ARRAY DE FLOAT
+				arrayValores[indice] = atoi( arrayString[indice].c_str() );
+
+				// COMPUTA O VALOR FINAL E ESCREVE NO ARRAY DE FLOAT
+				arrayValores[indice] = ((arrayValores[indice])/1000) * (pow(10,z)) ;
+
+				// ESCREVE NO ARQUIVO
+				output << arrayValores[indice] << ";0.0" << endl;
+
+				// INCREMETA O INDICE
+				indice++;
+
+			}
+
+		}
+
+	}
+
+	if ( precisao == 2 ) {
+
+		for( int i = 1 ; i <= 9 ; i++ ){
+
+			for( int j = 0 ; j <= 9 ; j++ ){
 
 				for( int z = limLower ; z <= limUpper ; z++ ){
 
 					// CONCATENA OS VALORES NO ARRAY
-					arrayConcat[indice] << i << j << k;
+					arrayConcat[indice] << i << j;
 
 					// ESCREVE VALORES EM UM ARRAY DE STRING
 					arrayString[indice] = arrayConcat[indice].str();
@@ -67,6 +99,44 @@ void SistemaDeAritimeticaDePontoFlutuante(string saida, int BASE, int precisao, 
 
 					// INCREMETA O INDICE
 					indice++;
+
+				}
+
+			}
+
+		}
+
+	}	
+
+	if ( precisao == 3 ) {
+
+		for( int i = 1 ; i <= 9 ; i++ ){
+
+			for( int j = 0 ; j <= 9 ; j++ ){
+
+				for( int k = 0 ; k <= 9 ; k++ ){
+
+					for( int z = limLower ; z <= limUpper ; z++ ){
+
+						// CONCATENA OS VALORES NO ARRAY
+						arrayConcat[indice] << i << j << k;
+
+						// ESCREVE VALORES EM UM ARRAY DE STRING
+						arrayString[indice] = arrayConcat[indice].str();
+
+						// CONVERTE VALOR DO ARRAY DE STRING EM INT E ESCREVE NO ARRAY DE FLOAT
+						arrayValores[indice] = atoi( arrayString[indice].c_str() );
+
+						// COMPUTA O VALOR FINAL E ESCREVE NO ARRAY DE FLOAT
+						arrayValores[indice] = ((arrayValores[indice])/1000) * (pow(10,z)) ;
+
+						// ESCREVE NO ARQUIVO
+						output << arrayValores[indice] << ";0.0" << endl;
+
+						// INCREMETA O INDICE
+						indice++;
+
+					}
 
 				}
 
