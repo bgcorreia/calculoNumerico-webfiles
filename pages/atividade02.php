@@ -83,8 +83,6 @@
 						<label for="base">Base</label>
 						<select class="form-control" name="base" id="base">
 							<option>10</option>
-							<option>8</option>
-							<option>2</option>
 						</select>
 					</div>
 
