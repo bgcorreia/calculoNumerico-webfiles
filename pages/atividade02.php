@@ -91,8 +91,6 @@
 					<div class="form-group">
 						<label for="precisao">Precisão</label>
 						<select class="form-control" name="precisao" id="precisao">
-							<option>5</option>
-							<option>4</option>
 							<option>3</option>
 							<option>2</option>
 							<option>1</option>
