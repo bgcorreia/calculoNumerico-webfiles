@@ -71,7 +71,7 @@
 				<div id="forms">
 					<?php
 
-						$DEBUG = 1;
+						$DEBUG = 0;
 
 						$dataDir = "../../data/";
 
