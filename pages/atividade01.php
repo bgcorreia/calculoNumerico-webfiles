@@ -102,15 +102,6 @@
 
 			<script type="text/javascript">
 
-			  	function convert() {
-			   		partereal = parseInt(document.getElementById("partereal").value);
-			   		partefloat = parseFloat(document.getElementById("partefloat").value);
-			   		total = partereal + partefloat;
-			   		var binario = total.toString(2);
-			   		document.getElementById('resultado').value = binario;
-			   	}
-
-				/*
 
 			   function calcular(tNumero) {
 			   var numero = document.calcform.numero.value;
@@ -134,9 +125,7 @@
 			   }
 			   document.calcform.res.value = res;
 				
-					}
-
-				*/
+				}
 
 			 </script>
 
