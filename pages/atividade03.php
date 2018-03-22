@@ -32,7 +32,7 @@
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
 							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSEÇÃO</a>
+							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
 							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NETWON</a>
 							  </div>
 							</div>

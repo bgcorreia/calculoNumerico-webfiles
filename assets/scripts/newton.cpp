@@ -56,7 +56,7 @@ void newtonRaphson(string saida, double x)
         // x(i+1) = x(i) - f(x) / f'(x) <--- formula de Newton Raphson
         x = x - h;
         // Aumentei a precisao do x ( setprecision() ) para ter uma visao mais nitida da diferenca da raiz nas ultimas iteraçoes...
-        output << "Iteração número: " << c << "   Raiz aproximada: " << setprecision(15)<< x << endl;
+        output << "Iteracao numero: " << c << " | Raiz aproximada: " << setprecision(15)<< x << endl;
         c++;
     }
 

@@ -32,7 +32,7 @@
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
 							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSEÇÃO</a>
+							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
 							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NEWTON</a>
 							  </div>
 							</div>
@@ -69,29 +69,48 @@
 				</div>
 
 			<form name="calcform" method="post" action="">
+			   
 			   <fieldset>
 			      <legend>Conversor (Decimal > Binario)</legend>
-
+			    <div class="form-group">
 			      <label for="numero">Digite o valor: </label>
-			      <input type="text" name="numero" id="numero" />
-			tNumero
+			      <input type="text" placeholder="Digite o número" name="numero" id="numero" />
+				</div>
+
+				<div class="form-group">
 			      <label for="tNumero">Selecione a operação:</label>
 			      <select name="tNumero" id="tNumero">
 			         <option value="inteiro">inteiro</option>
 			         <option value="flutuante">flutuante</option>
 			       </select>
+			    </dev>
 
+			    <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
+
+			    <div class="form-group">
 			      <label for="res">Resultado:</label>
 			      <input type="text" name="res" id="res" />
+			    </div>
 
-			      <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
 			   </fieldset>
 				</form>
 
 
 			</style>
 
+
+
 			<script type="text/javascript">
+
+			  	function convert() {
+			   		partereal = parseInt(document.getElementById("partereal").value);
+			   		partefloat = parseFloat(document.getElementById("partefloat").value);
+			   		total = partereal + partefloat;
+			   		var binario = total.toString(2);
+			   		document.getElementById('resultado').value = binario;
+			   	}
+
+				/*
 
 			   function calcular(tNumero) {
 			   var numero = document.calcform.numero.value;
@@ -114,7 +133,10 @@
 			      
 			   }
 			   document.calcform.res.value = res;
+				
 					}
+
+				*/
 
 			 </script>
 

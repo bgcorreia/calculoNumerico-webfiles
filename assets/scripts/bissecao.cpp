@@ -60,7 +60,7 @@ void bissecao(string saida, double a, double b)
         else
             a = c;
 
-    output << "Iteração número: " << count << "   Raiz aproximada:" << setprecision(15) << c << endl;
+    output << "Iteracaoo numero: " << count << " | Raiz aproximada: " << setprecision(15) << c << endl;
     count++;
     }
 
