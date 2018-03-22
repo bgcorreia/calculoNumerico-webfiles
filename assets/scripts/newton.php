@@ -26,7 +26,7 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -68,28 +68,48 @@
 	  				<b>ATIVIDADE 04 - NEWTON</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/newton.php">
+				<div id="forms">
+					<?php
 
-					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
-					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+						$DEBUG = 0;
 
-					<div class="form-group">
-					    <label for="functionNewton">Função</label>
-					    <select class="form-control" name="precisao" id="precisao">
-							<option>( 0.3 * PI * x ^ 2 * ( 9 - x ) ) - 1</option>
-						</select>
-						<small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
-					</div>
+						$dataDir = "../../data/";
 
-					<div class="form-group">
-					    <label for="functionBissecaoValueA">Valor A</label>
-					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor">
-					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor.</small>
-					</div>
+						$execDir = $dataDir . $_REQUEST['exec'];
 
-					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRoot">
+						if ( !(is_dir($execDir)) ){
+							mkdir( $execDir , 0755 );
+						}
 
-				</form>
+						$backC = "./newton" ;
+
+						$valueA = $_REQUEST['functionInputValueA'];
+
+						$fileOutput = $execDir . "/interacoes-newton.csv";
+
+						if ($DEBUG) {
+
+							echo $backC . " -o " . $fileOutput . " -a " . $valueA . "<br><br>";
+
+							echo "Valor A: " . $valueA . "<br>";
+						}
+
+						// EXECUTION C PROGRAM
+						exec($backC . " -o " . $fileOutput . " -a " . $valueA);
+
+						$f = fopen($fileOutput, "r") or exit("Unable to open file!");
+						// read file line by line until the end of file (feof)
+						while(!feof($f)) {
+						  echo fgets($f)."<br />";
+						}
+
+						fclose($f);
+
+					?>
+
+					<?php ?>
+
+				</div>
 
 			</div>
 

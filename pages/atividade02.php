@@ -84,6 +84,7 @@
 						<select class="form-control" name="base" id="base">
 							<option>10</option>
 						</select>
+						<small id="baseSmall" class="form-text text-muted">Entre com a base.</small>
 					</div>
 
 					<div class="form-group">
@@ -93,6 +94,7 @@
 							<option>2</option>
 							<option>1</option>
 						</select>
+						<small id="precisaoSmall" class="form-text text-muted">Entre com a precisão.</small>
 					</div>
 					
 					<div class="form-group">
@@ -103,6 +105,7 @@
 							<option>-2</option>
 							<option>-1</option>
 						</select>
+						<small id="limlowerSmall" class="form-text text-muted">Entre com o limite inferior.</small>
 					</div>						
 					
 					<div class="form-group">
@@ -114,6 +117,7 @@
 							<option>1</option>
 							<option>0</option>
 						</select>
+						<small id="limupperSmall" class="form-text text-muted">Entre com o limite superior.</small>
 					</div>
 
 					<input type="submit" class="btn btn-primary upload" value="Gerar gráfico" id="gerarGrafico">

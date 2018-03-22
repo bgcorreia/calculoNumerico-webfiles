@@ -33,7 +33,7 @@
 							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
 							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
 							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSEÇÃO</a>
-							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NEWTON</a>
+							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NETWON</a>
 							  </div>
 							</div>
 						</li>
@@ -68,7 +68,33 @@
 	  				<b>ATIVIDADE 03 - BISSEÇÃO</b>
 				</div>
 
-				<form name="calcform" method="post" action="">
+				<form name="FormParameters" method="POST" action="/assets/scripts/bissecao.php">
+
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+
+					<div class="form-group">
+					    <label for="functionBissecao">Função</label>
+					    <select class="form-control" name="function" id="function">
+							<option>F(x) = ( 0.3 * PI * x ^ 2 * ( 9 - x) ) -1</option>
+						</select>
+					    <small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
+					</div>
+
+					<div class="form-group">
+					    <label for="functionBissecaoValueA">Valor A</label>
+					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor A">
+					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor A.</small>
+					</div>
+
+					<div class="form-group">
+					    <label for="functionBissecaoValueB">Valor B</label>
+					    <input type="number" step="any" class="form-control" name="functionInputValueB" id="functionInputValueB" aria-describedby="functionValueBHelp" placeholder="Digite o valor de B">
+					    <small id="functionValueBHelp" class="form-text text-muted">Entre com o valor B.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRootBissecao">
+
 				</form>
 
 			</div>
