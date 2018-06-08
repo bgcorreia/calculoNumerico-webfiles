@@ -26,7 +26,7 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -76,10 +76,31 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
+	  				<b>ATIVIDADE 04 - NEWTON</b>
 				</div>
 
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
+				<form name="FormParameters" method="POST" action="/assets/scripts/newton.php">
+
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+
+					<div class="form-group">
+					    <label for="functionNewton">Função</label>
+					    <select class="form-control" name="precisao" id="precisao">
+							<option>( 0.3 * PI * x ^ 2 * ( 9 - x ) ) - 1</option>
+						</select>
+						<small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
+					</div>
+
+					<div class="form-group">
+					    <label for="functionBissecaoValueA">Valor A</label>
+					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor">
+					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRoot">
+
+				</form>
 
 			</div>
 

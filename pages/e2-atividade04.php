@@ -26,7 +26,7 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -74,16 +74,8 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<div id="forms">
-				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
-				</div>
-
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
-
-			</div>
-
-		</div>
+			<!-- FAZER A PARADA -->
+			
 	</div>
 	</div>
 	<div class="container">

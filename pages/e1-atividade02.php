@@ -26,7 +26,7 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -76,10 +76,64 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
+	  				<b>ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</b>
 				</div>
 
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
+				<form name="FormParameters" method="POST" action="/assets/scripts/graph">
+
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+
+					<div class="dropdown-divider"></div>
+
+					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+
+					<div class="dropdown-divider"></div>
+
+					<div class="form-group">
+						<label for="base">Base</label>
+						<select class="form-control" name="base" id="base">
+							<option>10</option>
+						</select>
+						<small id="baseSmall" class="form-text text-muted">Entre com a base.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="precisao">Precisão</label>
+						<select class="form-control" name="precisao" id="precisao">
+							<option>3</option>
+							<option>2</option>
+							<option>1</option>
+						</select>
+						<small id="precisaoSmall" class="form-text text-muted">Entre com a precisão.</small>
+					</div>
+					
+					<div class="form-group">
+						<label for="limlower">Limite Inferior</label>
+						<select class="form-control" name="limlower" id="limlower">
+							<option>-4</option>
+							<option>-3</option>
+							<option>-2</option>
+							<option>-1</option>
+						</select>
+						<small id="limlowerSmall" class="form-text text-muted">Entre com o limite inferior.</small>
+					</div>						
+					
+					<div class="form-group">
+						<label for="limupper">Limite Superior</label>
+						<select class="form-control" name="limupper" id="limupper">
+							<option>4</option>
+							<option>3</option>
+							<option>2</option>
+							<option>1</option>
+							<option>0</option>
+						</select>
+						<small id="limupperSmall" class="form-text text-muted">Entre com o limite superior.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Gerar gráfico" id="gerarGrafico">
+
+				</form>
 
 			</div>
 

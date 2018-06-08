@@ -26,14 +26,14 @@
 								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
 							</li>
 							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    ETAPA 1
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							    <a class="dropdown-item" href="/pages/e1-atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
 							    <a class="dropdown-item" href="/pages/e1-atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
 							    <a class="dropdown-item" href="/pages/e1-atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NEWTON</a>
+							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NETWON</a>
 							  </div>
 							</div>
 							<div class="dropdown">
@@ -76,10 +76,37 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
+	  				<b>ATIVIDADE 03 - BISSEÇÃO</b>
 				</div>
 
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
+				<form name="FormParameters" method="POST" action="/assets/scripts/bissecao.php">
+
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+
+					<div class="form-group">
+					    <label for="functionBissecao">Função</label>
+					    <select class="form-control" name="function" id="function">
+							<option>F(x) = ( 0.3 * PI * x ^ 2 * ( 9 - x) ) -1</option>
+						</select>
+					    <small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
+					</div>
+
+					<div class="form-group">
+					    <label for="functionBissecaoValueA">Valor A</label>
+					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor A">
+					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor A.</small>
+					</div>
+
+					<div class="form-group">
+					    <label for="functionBissecaoValueB">Valor B</label>
+					    <input type="number" step="any" class="form-control" name="functionInputValueB" id="functionInputValueB" aria-describedby="functionValueBHelp" placeholder="Digite o valor de B">
+					    <small id="functionValueBHelp" class="form-text text-muted">Entre com o valor B.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRootBissecao">
+
+				</form>
 
 			</div>
 
