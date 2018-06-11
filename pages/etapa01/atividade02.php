@@ -19,37 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
-							</li>
-							<div class="dropdown">
-							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 1
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e1-atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NEWTON</a>
-							  </div>
-							</div>
-							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 2
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e2-atividade01">ATIVIDADE 01 - ELIMINAÇÃO COMPACTA</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade02">ATIVIDADE 02 - CHOLESKY</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade03">ATIVIDADE 03 - JACOBI</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade04">ATIVIDADE 04 - GAUSS-SEIDEL</a>
-							  </div>
-							</div>
-						</li>
-					</ul>
-				</div>
+				
+				<!-- MENU TOPO -->
+				<?php include "../includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -74,8 +46,70 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<!-- FAZER A PARADA -->
-			
+			<div id="forms">
+				<div class="alert alert-primary" role="alert">
+	  				<b>ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</b>
+				</div>
+
+				<form name="FormParameters" method="POST" action="/assets/scripts/graph">
+
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+
+					<div class="dropdown-divider"></div>
+
+					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+
+					<div class="dropdown-divider"></div>
+
+					<div class="form-group">
+						<label for="base">Base</label>
+						<select class="form-control" name="base" id="base">
+							<option>10</option>
+						</select>
+						<small id="baseSmall" class="form-text text-muted">Entre com a base.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="precisao">Precisão</label>
+						<select class="form-control" name="precisao" id="precisao">
+							<option>3</option>
+							<option>2</option>
+							<option>1</option>
+						</select>
+						<small id="precisaoSmall" class="form-text text-muted">Entre com a precisão.</small>
+					</div>
+					
+					<div class="form-group">
+						<label for="limlower">Limite Inferior</label>
+						<select class="form-control" name="limlower" id="limlower">
+							<option>-4</option>
+							<option>-3</option>
+							<option>-2</option>
+							<option>-1</option>
+						</select>
+						<small id="limlowerSmall" class="form-text text-muted">Entre com o limite inferior.</small>
+					</div>						
+					
+					<div class="form-group">
+						<label for="limupper">Limite Superior</label>
+						<select class="form-control" name="limupper" id="limupper">
+							<option>4</option>
+							<option>3</option>
+							<option>2</option>
+							<option>1</option>
+							<option>0</option>
+						</select>
+						<small id="limupperSmall" class="form-text text-muted">Entre com o limite superior.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Gerar gráfico" id="gerarGrafico">
+
+				</form>
+
+			</div>
+
+		</div>
 	</div>
 	</div>
 	<div class="container">

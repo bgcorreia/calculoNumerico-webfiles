@@ -21,7 +21,7 @@
 				</button>
 				
 				<!-- MENU TOPO -->
-				<?php include "./includes/menuTopo.php"; ?>
+				<?php include "../includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -46,75 +46,8 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<div id="forms">
-				<div class="alert alert-primary" role="alert">
-	  				<b>ATIVIDADE 01 - MÁQUINA BINÁRIA</b>
-				</div>
-
-			<form name="calcform" method="post" action="">
-			   
-			   <fieldset>
-			      <legend>Conversor (Decimal > Binario)</legend>
-			    <div class="form-group">
-			      <label for="numero">Digite o valor: </label>
-			      <input type="text" placeholder="Digite o número" name="numero" id="numero" />
-				</div>
-
-				<div class="form-group">
-			      <label for="tNumero">Selecione a operação:</label>
-			      <select name="tNumero" id="tNumero">
-			         <option value="inteiro">inteiro</option>
-			         <option value="flutuante">flutuante</option>
-			       </select>
-			    </dev>
-
-			    <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
-
-			    <div class="form-group">
-			      <label for="res">Resultado:</label>
-			      <input type="text" name="res" id="res" />
-			    </div>
-
-			   </fieldset>
-				</form>
-
-
-			</style>
-
-
-
-			<script type="text/javascript">
-
-
-			   function calcular(tNumero) {
-			   var numero = document.calcform.numero.value;
-			   
-
-			   if (tNumero == "inteiro") {
-			           
-			      	var decInteiro = parseInt(numero);
-					var binario = decInteiro.toString(2);
-					var res = binario;
-			   } 
-			   else {
-			      if (tNumero == "flutuante") {
-			           
-			        var decQuebrado = parseFloat(numero);
-					var binario = decQuebrado.toString(2);
-					var res = binario;
-
-			      } 
-			      
-			   }
-			   document.calcform.res.value = res;
-				
-				}
-
-			 </script>
-
-			</div>
-
-		</div>
+			<!-- FAZER A PARADA -->
+			
 	</div>
 	</div>
 	<div class="container">

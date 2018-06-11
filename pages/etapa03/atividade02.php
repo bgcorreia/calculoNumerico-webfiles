@@ -19,37 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
-							</li>
-							<div class="dropdown">
-							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 1
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e1-atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NETWON</a>
-							  </div>
-							</div>
-							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 2
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e2-atividade01">ATIVIDADE 01 - ELIMINAÇÃO COMPACTA</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade02">ATIVIDADE 02 - CHOLESKY</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade03">ATIVIDADE 03 - JACOBI</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade04">ATIVIDADE 04 - GAUSS-SEIDEL</a>
-							  </div>
-							</div>
-						</li>
-					</ul>
-				</div>
+				
+				<!-- MENU TOPO -->
+				<?php include "../includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -74,43 +46,8 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<div id="forms">
-				<div class="alert alert-primary" role="alert">
-	  				<b>ATIVIDADE 03 - BISSEÇÃO</b>
-				</div>
-
-				<form name="FormParameters" method="POST" action="/assets/scripts/bissecao.php">
-
-					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
-					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
-
-					<div class="form-group">
-					    <label for="functionBissecao">Função</label>
-					    <select class="form-control" name="function" id="function">
-							<option>F(x) = ( 0.3 * PI * x ^ 2 * ( 9 - x) ) -1</option>
-						</select>
-					    <small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
-					</div>
-
-					<div class="form-group">
-					    <label for="functionBissecaoValueA">Valor A</label>
-					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor A">
-					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor A.</small>
-					</div>
-
-					<div class="form-group">
-					    <label for="functionBissecaoValueB">Valor B</label>
-					    <input type="number" step="any" class="form-control" name="functionInputValueB" id="functionInputValueB" aria-describedby="functionValueBHelp" placeholder="Digite o valor de B">
-					    <small id="functionValueBHelp" class="form-text text-muted">Entre com o valor B.</small>
-					</div>
-
-					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRootBissecao">
-
-				</form>
-
-			</div>
-
-		</div>
+			<!-- FAZER A PARADA -->
+			
 	</div>
 	</div>
 	<div class="container">

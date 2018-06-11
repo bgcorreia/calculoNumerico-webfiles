@@ -19,37 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
-							</li>
-							<div class="dropdown">
-							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 1
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e1-atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
-							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NEWTON</a>
-							  </div>
-							</div>
-							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 2
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/e2-atividade01">ATIVIDADE 01 - ELIMINAÇÃO COMPACTA</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade02">ATIVIDADE 02 - CHOLESKY</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade03">ATIVIDADE 03 - JACOBI</a>
-							    <a class="dropdown-item" href="/pages/e2-atividade04">ATIVIDADE 04 - GAUSS-SEIDEL</a>
-							  </div>
-							</div>
-						</li>
-					</ul>
-				</div>
+				
+				<!-- MENU TOPO -->
+				<?php include "../includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -74,8 +46,75 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<!-- FAZER A PARADA -->
-			
+			<div id="forms">
+				<div class="alert alert-primary" role="alert">
+	  				<b>ATIVIDADE 01 - MÁQUINA BINÁRIA</b>
+				</div>
+
+			<form name="calcform" method="post" action="">
+			   
+			   <fieldset>
+			      <legend>Conversor (Decimal > Binario)</legend>
+			    <div class="form-group">
+			      <label for="numero">Digite o valor: </label>
+			      <input type="text" placeholder="Digite o número" name="numero" id="numero" />
+				</div>
+
+				<div class="form-group">
+			      <label for="tNumero">Selecione a operação:</label>
+			      <select name="tNumero" id="tNumero">
+			         <option value="inteiro">inteiro</option>
+			         <option value="flutuante">flutuante</option>
+			       </select>
+			    </dev>
+
+			    <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.tNumero.value)"/>
+
+			    <div class="form-group">
+			      <label for="res">Resultado:</label>
+			      <input type="text" name="res" id="res" />
+			    </div>
+
+			   </fieldset>
+				</form>
+
+
+			</style>
+
+
+
+			<script type="text/javascript">
+
+
+			   function calcular(tNumero) {
+			   var numero = document.calcform.numero.value;
+			   
+
+			   if (tNumero == "inteiro") {
+			           
+			      	var decInteiro = parseInt(numero);
+					var binario = decInteiro.toString(2);
+					var res = binario;
+			   } 
+			   else {
+			      if (tNumero == "flutuante") {
+			           
+			        var decQuebrado = parseFloat(numero);
+					var binario = decQuebrado.toString(2);
+					var res = binario;
+
+			      } 
+			      
+			   }
+			   document.calcform.res.value = res;
+				
+				}
+
+			 </script>
+
+			</div>
+
+		</div>
 	</div>
 	</div>
 	<div class="container">
