@@ -19,9 +19,37 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				
-				<!-- MENU TOPO -->
-				<?php include "./pages/includes/menuTopo.php"; ?>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<li class="nav-item">
+								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
+							</li>
+							<div class="dropdown">
+							  <button class="btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    ETAPA 1
+							  </button>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							    <a class="dropdown-item" href="/pages/e1-atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
+							    <a class="dropdown-item" href="/pages/e1-atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
+							    <a class="dropdown-item" href="/pages/e1-atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
+							    <a class="dropdown-item" href="/pages/e1-atividade04">ATIVIDADE 04 - NEWTON</a>
+							  </div>
+							</div>
+							<div class="dropdown">
+							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							    ETAPA 2
+							  </button>
+							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							    <a class="dropdown-item" href="/pages/e2-atividade01">ATIVIDADE 01 - ELIMINAÇÃO COMPACTA</a>
+							    <a class="dropdown-item" href="/pages/e2-atividade02">ATIVIDADE 02 - CHOLESKY</a>
+							    <a class="dropdown-item" href="/pages/e2-atividade03">ATIVIDADE 03 - JACOBI</a>
+							    <a class="dropdown-item" href="/pages/e2-atividade04">ATIVIDADE 04 - GAUSS-SEIDEL</a>
+							  </div>
+							</div>
+						</li>
+					</ul>
+				</div>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -46,16 +74,8 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<div id="forms">
-				<div class="alert alert-primary" role="alert">
-	  				<b>Resumo geral:</b>
-				</div>
-
-				<p>O Cálculo Numérico tem por objetivo estudar esquemas numéricos (algoritmos numéricos) para resolução de problemas que podem ser representados por um Modelo Matemático. Um esquema é eficiente quando este apresenta soluções dentro de uma precisão desejada com custo computacional (tempo de execução + memória) baixo. Os esquemas numéricos nos fornecem aproximações para o que seria a solução exata do problema. Os erros cometidos nesta aproximação são decorrentes da discretização do problema, ou seja, passar do Modelo Matemático para o esquema numérico, e da forma como as máquinas representam os dados numéricos.</p>
-
-			</div>
-
-		</div>
+			<!-- FAZER A PARADA -->
+			
 	</div>
 	</div>
 	<div class="container">
