@@ -19,26 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<li class="nav-item">
-								<a class="btn btn-outline-primary menuTopo" href="/">INÍCIO</a>
-							</li>
-							<div class="dropdown">
-							  <button class="btn btn btn-outline-primary dropdown-toggle menuTopo" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    ETAPA 1
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							    <a class="dropdown-item" href="/pages/atividade01">ATIVIDADE 01 - MÁQUINA BINÁRIA</a>
-							    <a class="dropdown-item" href="/pages/atividade02">ATIVIDADE 02 - SISTEMA DE PONTO FLUTUANTE</a>
-							    <a class="dropdown-item" href="/pages/atividade03">ATIVIDADE 03 - BISSECÇÃO</a>
-							    <a class="dropdown-item" href="/pages/atividade04">ATIVIDADE 04 - NEWTON</a>
-							  </div>
-							</div>
-						</li>
-					</ul>
-				</div>
+
+				<!-- MENU TOPO -->
+				<?php include "../../pages/includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
