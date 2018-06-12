@@ -51,7 +51,7 @@
 	  				<b>ATIVIDADE 02 - QUADRATURA GAUSSIANA</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/runge-kutta/resultado">
+				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/quadgauss/resultado">
 
 					<div class="dropdown-divider"></div>
 
@@ -60,42 +60,8 @@
 					<div class="dropdown-divider"></div>
 
 					<div class="form-group">
-						<label for="x0">X Inicial</label>
-						<select class="form-control" name="x0" id="x0">
-							<option selected>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<small id="x0Small" class="form-text text-muted">Escolhe o valor de X(0).</small>
-					</div>
-
-					<div class="form-group">
-						<label for="xn">X N</label>
-						<select class="form-control" name="xn" id="xn">
-							<option>0</option>
-							<option>1</option>
-							<option selected>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-						<small id="xnSmall" class="form-text text-muted">Entre com o X(N).</small>
-					</div>
-
-					<div class="form-group">
-						<label for="passo">Passo</label>
-						<select class="form-control" name="passo" id="passo">
-							<option selected>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<small id="passoSmall" class="form-text text-muted">Entre com o Passo.</small>
-					</div>
-					
-					<div class="form-group">
-						<label for="y0">Y Inicial</label>
-						<select class="form-control" name="y0" id="y0">
+						<label for="n">PN(X)</label>
+						<select class="form-control" name="n" id="n">
 							<option>0</option>
 							<option>1</option>
 							<option>2</option>
@@ -103,10 +69,40 @@
 							<option>4</option>
 							<option selected>5</option>
 						</select>
-						<small id="y0Small" class="form-text text-muted">Escolhe o valor de Y(0).</small>
+						<small id="nSmall" class="form-text text-muted">Escolhe o valor de PN(X).</small>
 					</div>
 
-					<input type="submit" class="btn btn-primary upload" value="RESOLVER" id="gerarGrafico">
+					<div class="form-group">
+						<label for="limInferior">Limite de Integração Inferior</label>
+						<select class="form-control" name="limInferior" id="limInferior">
+							<option>0</option>
+							<option selected>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+						<small id="limInferiorSmall" class="form-text text-muted">Entre com o limite inferior.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="limSuperior">Limite de Integração Superior</label>
+						<select class="form-control" name="limSuperior" id="limSuperior">
+							<option>1</option>
+							<option>2</option>
+							<option selected>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+						<small id="limSuperiorSmall" class="form-text text-muted">Entre com o limite superior.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="EXECUTAR" id="gerarGrafico">
 
 				</form>
 

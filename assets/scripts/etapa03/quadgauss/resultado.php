@@ -19,9 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				
+
 				<!-- MENU TOPO -->
-				<?php include "../includes/menuTopo.php"; ?>
+				<?php include "../../../../pages/includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -48,114 +48,92 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>ATIVIDADE 01 - INTERPOLAÇÃO DE NEWTON</b>
+	  				<b>ATIVIDADE 02 - QUADRATURA GAUSSIANA</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/interpolacao/resultado">
+				<div id="forms">
+					<?php
 
-					<div class="dropdown-divider"></div>
+						$DEBUG = 0;
 
-					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+						$exec = "./quadgauss" ;
 
-					<div class="dropdown-divider"></div>
+						$n = $_REQUEST['n'];
 
-					<div class="form-group">
-						<label for="option">Tabela X | F(X)</label>
-						<select class="form-control" name="option" id="option">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-						</select>
-						<small id="optionSmall" class="form-text text-muted">Entre com uma das opções.</small>
+						$limInferior = $_REQUEST['limInferior'];
+
+						$limSuperior = $_REQUEST['limSuperior'];
+
+						if ($DEBUG) {
+
+							echo $exec . " " . $n . " " . $limInferior . " " . $limSuperior . "<br><br>";
+
+							echo "N: " . $n . "<br>";
+							echo "Limite Inferior: " . $limInferior . "<br>";
+							echo "Limite Superior: " . $limSuperior . "<br>";
+						}
+						
+						// EXECUTION C PROGRAM
+						exec($exec . " " . $n . " " . $limInferior . " " . $limSuperior);
+
+					?>
+
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>POLINÔMIO DE LAGRANGE: </b>
+	  					
+	  					<?php 
+							$f = fopen("./polinomioLegendre", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
+
+							fclose($f);
+						?>
+
 					</div>
 
-					<div class="form-group">
-						<label for="precisao">Precisão</label>
-						<select class="form-control" name="precisao" id="precisao">
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-						<small id="precisaoSmall" class="form-text text-muted">Entre com a precisão.</small>
-					</div>
-					
-					<div class="form-group">
-						<label for="limlower">X Inicial</label>
-						<select class="form-control" name="limlower" id="limlower">
-							<option>-10</option>
-							<option>-9</option>
-							<option>-8</option>
-							<option>-7</option>
-							<option>-6</option>
-							<option>-5</option>
-							<option>-4</option>
-							<option>-3</option>
-							<option>-2</option>
-							<option selected>-1</option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-						</select>
-						<small id="limlowerSmall" class="form-text text-muted">Entre com o X inicial.</small>
-					</div>						
-					
-					<div class="form-group">
-						<label for="limupper">X Final</label>
-						<select class="form-control" name="limupper" id="limupper">
-							<option>-10</option>
-							<option>-9</option>
-							<option>-8</option>
-							<option>-7</option>
-							<option>-6</option>
-							<option>-5</option>
-							<option>-4</option>
-							<option>-3</option>
-							<option>-2</option>
-							<option>-1</option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option selected>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-						</select>
-						<small id="limupperSmall" class="form-text text-muted">Entre com o X final.</small>
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>RAIZES E PESOS: </b>
+	  					<br>
+	  					
+	  					<?php 
+							$f = fopen("./raizesPesos", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
+
+							fclose($f);
+						?>
+
 					</div>
 
-					<div class="form-group">
-						<label for="passo">Passo</label>
-						<select class="form-control" name="passo" id="passo">
-							<option selected>0.1</option>
-							<option>0.2</option>
-							<option>0.5</option>
-							<option>1</option>
-							<option>1.5</option>
-							<option>2</option>
-						</select>
-						<small id="passoSmall" class="form-text text-muted">Entre com o Passo.</small>
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>VALOR DE INTEGRAÇÃO: </b>
+	  					
+	  					<?php 
+							$f = fopen("./valorIntegration", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
+
+							fclose($f);
+						?>
+
 					</div>
 
-					<input type="submit" class="btn btn-primary upload" value="Gerar Expressão/Gráfico" id="gerarGrafico">
+				</div>
 
-				</form>
+			<a href="/pages/etapa03/atividade02" class="btn">VOLTAR</a>
 
 			</div>
-			
+
+		</div>
 	</div>
 	</div>
 	<div class="container">
