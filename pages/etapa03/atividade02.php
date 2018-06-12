@@ -46,7 +46,71 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<!-- FAZER A PARADA -->
+			<div id="forms">
+				<div class="alert alert-primary" role="alert">
+	  				<b>ATIVIDADE 02 - QUADRATURA GAUSSIANA</b>
+				</div>
+
+				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/runge-kutta/resultado">
+
+					<div class="dropdown-divider"></div>
+
+					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+
+					<div class="dropdown-divider"></div>
+
+					<div class="form-group">
+						<label for="x0">X Inicial</label>
+						<select class="form-control" name="x0" id="x0">
+							<option selected>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+						<small id="x0Small" class="form-text text-muted">Escolhe o valor de X(0).</small>
+					</div>
+
+					<div class="form-group">
+						<label for="xn">X N</label>
+						<select class="form-control" name="xn" id="xn">
+							<option>0</option>
+							<option>1</option>
+							<option selected>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+						<small id="xnSmall" class="form-text text-muted">Entre com o X(N).</small>
+					</div>
+
+					<div class="form-group">
+						<label for="passo">Passo</label>
+						<select class="form-control" name="passo" id="passo">
+							<option selected>1</option>
+							<option>2</option>
+							<option>3</option>
+						</select>
+						<small id="passoSmall" class="form-text text-muted">Entre com o Passo.</small>
+					</div>
+					
+					<div class="form-group">
+						<label for="y0">Y Inicial</label>
+						<select class="form-control" name="y0" id="y0">
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option selected>5</option>
+						</select>
+						<small id="y0Small" class="form-text text-muted">Escolhe o valor de Y(0).</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="RESOLVER" id="gerarGrafico">
+
+				</form>
+
+			</div>
 			
 	</div>
 	</div>

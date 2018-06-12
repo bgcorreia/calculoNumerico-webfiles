@@ -53,11 +53,6 @@
 
 				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/interpolacao/resultado">
 
-					<!--
-					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
-					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
-					-->
-
 					<div class="dropdown-divider"></div>
 
 					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>

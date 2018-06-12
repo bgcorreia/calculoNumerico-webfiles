@@ -19,9 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				
+
 				<!-- MENU TOPO -->
-				<?php include "../includes/menuTopo.php"; ?>
+				<?php include "../../../../pages/includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -48,78 +48,62 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>ATIVIDADE 03 - RUNGE KUTTA</b>
+	  				<b>ATIVIDADE 01 - INTERPOLAÇÃO NEWTON</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/runge-kutta/resultado">
+				<div id="forms">
+					<?php
 
-					<div class="dropdown-divider"></div>
+						$DEBUG = 0;
 
-					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+						$exec = "./RUNGE_KUTTA.py" ;
 
-					<div class="dropdown-divider"></div>
+						$x0 = $_REQUEST['x0'];
 
-					<div class="form-group">
-						<label for="edo">Equação Diferencial</label>
-						<select class="form-control" name="edo" id="edo">
-							<option selected>y' = ( - (y)^2 + 2yx ) / 5 </option>
-						</select>
-						<small id="x0Small" class="form-text text-muted">Escolhe o valor de X(0).</small>
+						$xn = $_REQUEST['xn'];
+
+						$passo = $_REQUEST['passo'];
+
+						$y0 = $_REQUEST['y0'];
+
+						if ($DEBUG) {
+
+							echo $exec . " " . $x0 . " " . $xn . " " . $passo . " " . $y0 . "<br><br>";
+
+							echo "X0: " . $x0 . "<br>";
+							echo "XN: " . $xn . "<br>";
+							echo "Passo: " . $passo . "<br>";
+							echo "Y0: " . $y0 . "<br><br>";
+						}
+						
+						// EXECUTION C PROGRAM
+						exec($exec . " " . $x0 . " " . $xn . " " . $passo . " " . $y0);
+
+					?>
+
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>RESULTADO</b>
+	  					
+	  					<?php 
+							$f = fopen("./RK_resposta_Yn.txt", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
+
+							fclose($f);
+						?>
+
 					</div>
 
-					<div class="form-group">
-						<label for="x0">X Inicial</label>
-						<select class="form-control" name="x0" id="x0">
-							<option selected>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<small id="x0Small" class="form-text text-muted">Escolhe o valor de X(0).</small>
-					</div>
+				</div>
 
-					<div class="form-group">
-						<label for="xn">X N</label>
-						<select class="form-control" name="xn" id="xn">
-							<option>0</option>
-							<option>1</option>
-							<option selected>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						</select>
-						<small id="xnSmall" class="form-text text-muted">Entre com o X(N).</small>
-					</div>
-
-					<div class="form-group">
-						<label for="passo">Passo</label>
-						<select class="form-control" name="passo" id="passo">
-							<option selected>1</option>
-							<option>2</option>
-							<option>3</option>
-						</select>
-						<small id="passoSmall" class="form-text text-muted">Entre com o Passo.</small>
-					</div>
-					
-					<div class="form-group">
-						<label for="y0">Y Inicial</label>
-						<select class="form-control" name="y0" id="y0">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option selected>5</option>
-						</select>
-						<small id="y0Small" class="form-text text-muted">Escolhe o valor de Y(0).</small>
-					</div>
-
-					<input type="submit" class="btn btn-primary upload" value="RESOLVER" id="gerarGrafico">
-
-				</form>
+			<a href="/pages/etapa03/atividade03" class="btn">VOLTAR</a>
 
 			</div>
-			
+
+		</div>
 	</div>
 	</div>
 	<div class="container">
