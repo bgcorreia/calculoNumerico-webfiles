@@ -60,6 +60,14 @@
 					<div class="dropdown-divider"></div>
 
 					<div class="form-group">
+						<label for="f">Função</label>
+						<select class="form-control" name="f" id="f">
+							<option select>x^3</option>
+						</select>
+						<small id="fSmall" class="form-text text-muted">Escolhe a função.</small>
+					</div>
+
+					<div class="form-group">
 						<label for="n">PN(X)</label>
 						<select class="form-control" name="n" id="n">
 							<option>0</option>
