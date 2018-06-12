@@ -46,7 +46,120 @@
 				<h1>CÁLCULO NUMÉRICO</h1>
 			</div>
 			
-			<!-- FAZER A PARADA -->
+			<div id="forms">
+				<div class="alert alert-primary" role="alert">
+	  				<b>ATIVIDADE 01 - INTERPOLAÇÃO DE NEWTON</b>
+				</div>
+
+				<form name="FormParameters" method="POST" action="/assets/scripts/etapa03/interpolacao/resultado">
+
+					<!--
+					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
+					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+					-->
+
+					<div class="dropdown-divider"></div>
+
+					<h3><i class="fa fa-list" aria-hidden="true"></i> Parametros</h3>
+
+					<div class="dropdown-divider"></div>
+
+					<div class="form-group">
+						<label for="option">Opção</label>
+						<select class="form-control" name="option" id="option">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+						<small id="optionSmall" class="form-text text-muted">Entre com uma das opções.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="precisao">Precisão</label>
+						<select class="form-control" name="precisao" id="precisao">
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+						<small id="precisaoSmall" class="form-text text-muted">Entre com a precisão.</small>
+					</div>
+					
+					<div class="form-group">
+						<label for="limlower">X Inicial</label>
+						<select class="form-control" name="limlower" id="limlower">
+							<option>-10</option>
+							<option>-9</option>
+							<option>-8</option>
+							<option>-7</option>
+							<option>-6</option>
+							<option>-5</option>
+							<option>-4</option>
+							<option>-3</option>
+							<option>-2</option>
+							<option selected>-1</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+						<small id="limlowerSmall" class="form-text text-muted">Entre com o X inicial.</small>
+					</div>						
+					
+					<div class="form-group">
+						<label for="limupper">X Final</label>
+						<select class="form-control" name="limupper" id="limupper">
+							<option>-10</option>
+							<option>-9</option>
+							<option>-8</option>
+							<option>-7</option>
+							<option>-6</option>
+							<option>-5</option>
+							<option>-4</option>
+							<option>-3</option>
+							<option>-2</option>
+							<option>-1</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option selected>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+						</select>
+						<small id="limupperSmall" class="form-text text-muted">Entre com o X final.</small>
+					</div>
+
+					<div class="form-group">
+						<label for="passo">Passo</label>
+						<select class="form-control" name="passo" id="passo">
+							<option selected>0.1</option>
+							<option>0.2</option>
+							<option>0.5</option>
+							<option>1</option>
+							<option>1.5</option>
+							<option>2</option>
+						</select>
+						<small id="passoSmall" class="form-text text-muted">Entre com o Passo.</small>
+					</div>
+
+					<input type="submit" class="btn btn-primary upload" value="Gerar Expressão/Gráfico" id="gerarGrafico">
+
+				</form>
+
+			</div>
 			
 	</div>
 	</div>

@@ -19,9 +19,9 @@
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-th-list" aria-hidden="true"></i>
 				</button>
-				
+
 				<!-- MENU TOPO -->
-				<?php include "../includes/menuTopo.php"; ?>
+				<?php include "../../../../pages/includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -48,31 +48,99 @@
 			
 			<div id="forms">
 				<div class="alert alert-primary" role="alert">
-	  				<b>ATIVIDADE 04 - NEWTON</b>
+	  				<b>ATIVIDADE 01 - INTERPOLAÇÃO NEWTON</b>
 				</div>
 
-				<form name="FormParameters" method="POST" action="/assets/scripts/etapa01/newton.php">
+				<div id="forms">
+					<?php
 
-					<?php $GLOBALS['DIR_RANDOM'] = md5(date('Y-m-d H:i:s.') . gettimeofday()['usec']) ; ?>
-					<input type="hidden" name="exec" value="<?php echo $DIR_RANDOM ?>">
+						$DEBUG = 0;
 
-					<div class="form-group">
-					    <label for="functionNewton">Função</label>
-					    <select class="form-control" name="precisao" id="precisao">
-							<option>( 0.3 * PI * x ^ 2 * ( 9 - x ) ) - 1</option>
-						</select>
-						<small id="functionHelp" class="form-text text-muted">Escolha a função.</small>
+						$exec = "./INTERP_NEWTON.py" ;
+
+						$option = $_REQUEST['option'];
+
+						$precisao = $_REQUEST['precisao'];
+
+						$xInicial = $_REQUEST['limlower'];
+
+						$xFinal = $_REQUEST['limupper'];
+
+						$passo = $_REQUEST['passo'];
+
+						if ($DEBUG) {
+
+							switch ($option) {
+
+							case 1:
+								echo $exec . " x_inst_" . $option . ".txt y_inst_" . $option . ".txt " . $precisao . " " . $xInicial . " " . $xFinal . " " . $passo . "<br><br>";
+								break;
+
+							case 2:
+								echo $exec . " x_inst_" . $option . ".txt y_inst_" . $option . ".txt " . $precisao . " " . $xInicial . " " . $xFinal . " " . $passo . "<br><br>";
+								break;
+
+							case 3:
+								echo $exec . " x_inst_" . $option . ".txt y_inst_" . $option . ".txt " . $precisao . " " . $xInicial . " " . $xFinal . " " . $passo . "<br><br>";
+								break;
+
+							case 4:
+								echo $exec . " x_inst_" . $option . ".txt y_inst_" . $option . ".txt " . $precisao . " " . $xInicial . " " . $xFinal . " " . $passo . "<br><br>";
+								break;
+
+							}
+
+							echo "Option: " . $option . "<br>";
+							echo "Precisao: " . $precisao . "<br>";
+							echo "Xinicial: " . $xInicial . "<br>";
+							echo "Xfinal: " . $xFinal . "<br><br>";
+						}
+						
+						// EXECUTION C PROGRAM
+						exec($exec . " x_inst_" . $option . ".txt y_inst_" . $option . ".txt " . $precisao . " " . $xInicial . " " . $xFinal . " " . $passo);
+
+					?>
+
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>P(x) GENÉRICO:</b>
+	  					
+	  					<?php 
+							$f = fopen("./arquivo_saida_expressao_generalizada_IN.txt", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
+
+							fclose($f);
+						?>
+
 					</div>
 
-					<div class="form-group">
-					    <label for="functionBissecaoValueA">Valor A</label>
-					    <input type="number" step="any" class="form-control" name="functionInputValueA" id="functionInputValueA" aria-describedby="functionValueAHelp" placeholder="Digite o valor">
-					    <small id="functionValueAHelp" class="form-text text-muted">Entre com o valor.</small>
+					<div class="alert alert-primary" role="alert">
+	  					<b>GRÁFICO:</b>
+	  					<img src="./img.png">
 					</div>
 
-					<input type="submit" class="btn btn-primary upload" value="Encontrar raízes" id="foundRoot">
+					<div class="alert alert-primary" role="alert">
+	  					
+	  					<b>P(x) com valores:</b>
+	  					
+	  					<?php 
+							$f = fopen("./arquivo_saida_expressao_IN.txt", "r") or exit("Unable to open file!");
+							// read file line by line until the end of file (feof)
+							while(!feof($f)) {
+							  echo fgets($f)."<br />";
+							}
 
-				</form>
+							fclose($f);
+						?>
+
+					</div>
+
+				</div>
+
+			<a href="/pages/etapa03/atividade01" class="btn">VOLTAR</a>
 
 			</div>
 

@@ -21,7 +21,7 @@
 				</button>
 
 				<!-- MENU TOPO -->
-				<?php include "../../pages/includes/menuTopo.php"; ?>
+				<?php include "../../../pages/includes/menuTopo.php"; ?>
 
 				<div class="groups">
 					<a href="https://www.facebook.com/yanffernandes" target="_blank">
@@ -56,7 +56,7 @@
 
 						$DEBUG = 0;
 
-						$dataDir = "../../data/";
+						$dataDir = "../../../data/";
 
 						$execDir = $dataDir . $_REQUEST['exec'];
 
